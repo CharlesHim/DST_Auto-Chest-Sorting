@@ -111,3 +111,24 @@ if GetModConfigData("SSB") then
 	end)
 end
 
+if GetModConfigData("mod_support_enabled") then
+
+	local mod_prefab_list = 
+	{
+		"storeroom",
+		"cellar",
+	}
+
+	for _, v in pairs(mod_prefab_list) do
+		AddPrefabPostInit(v,function(inst)
+			if not GLOBAL.TheWorld.ismastersim then 
+				return inst 
+			end
+			old_open = inst.components.container.onopenfn
+			inst.components.container.onopenfn = onopen
+		end)
+	end
+end
+
+
+	
