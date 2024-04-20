@@ -115,8 +115,15 @@ if GetModConfigData("mod_support_enabled") then
 
 	local mod_prefab_list = 
 	{
-		"storeroom",
-		"cellar",
+		"storeroom",	--储藏室
+		"cellar",		--地窖
+		
+		----- 在下面添加模组容器预制件名称，注意使用英文引号与逗号 -----
+
+
+
+
+		----- 在上面添加模组容器预制件名称，注意使用英文引号与逗号 -----
 	}
 
 	for _, v in pairs(mod_prefab_list) do
