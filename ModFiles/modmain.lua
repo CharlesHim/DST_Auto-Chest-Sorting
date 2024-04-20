@@ -115,9 +115,18 @@ if GetModConfigData("mod_support_enabled") then
 
 	local mod_prefab_list = 
 	{
-		"storeroom",	--储藏室
-		"cellar",		--地窖
-		
+		"storeroom",		--储藏室
+		"cellar",			--地窖
+		"medal_livingroot_chest",	--勋章的树根宝箱
+		"bearger_chest",	--勋章的熊皮宝箱
+		"hclr_supermu1",	--懈怠科技升级版的四个箱子冰箱
+		"hclr_supermu2",
+		"hclr_superice1",
+		"hclr_superice2",
+		"mo_chester",
+		"mo_icebox",
+		"lg_chest",			--海洋传说的 雨花·银龙宝箱
+		"venus_icebox",		--泰拉：虚空异界的 萝卜冰箱	
 		----- 在下面添加模组容器预制件名称，注意使用英文引号与逗号 -----
 
 
