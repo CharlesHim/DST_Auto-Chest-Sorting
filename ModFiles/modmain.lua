@@ -127,6 +127,8 @@ if GetModConfigData("mod_support_enabled") then
 		"mo_icebox",
 		"lg_chest",			--海洋传说的 雨花·银龙宝箱
 		"venus_icebox",		--泰拉：虚空异界的 萝卜冰箱	
+		"sora2ice",			--小穹 寒冰箱子
+		"hiddenmoonlight",	--棱镜 月藏宝匣
 		----- 在下面添加模组容器预制件名称，注意使用英文引号与逗号 -----
 
 
