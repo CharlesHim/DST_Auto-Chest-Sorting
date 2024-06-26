@@ -137,6 +137,10 @@ if GetModConfigData("mod_support_enabled") then
 		"venus_icebox",		--泰拉：虚空异界的 萝卜冰箱	
 		"sora2ice",			--小穹 寒冰箱子
 		"hiddenmoonlight",	--棱镜 月藏宝匣
+		"chest_whitewood",	--棱镜 白木展示台
+		"chest_whitewood_big",		--棱镜 白木展示柜
+		"chest_whitewood_big_inf",	--棱镜 白木展示柜·无限
+		"hiddenmoonlight_inf",		--棱镜 月藏宝匣·无限
 		----- 在下面添加模组容器预制件名称，注意使用英文引号与逗号 -----
 
 
