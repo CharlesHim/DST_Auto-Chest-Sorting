@@ -111,6 +111,14 @@ if GetModConfigData("SSB") then
 	end)
 end
 
+if GetModConfigData("sort_bookstation") then
+	AddPrefabPostInit("bookstation", function(inst)
+		if not GLOBAL.TheWorld.ismastersim then return inst end
+		old_open = inst.components.container.onopenfn
+		inst.components.container.onopenfn = onopen
+	end)
+end
+
 if GetModConfigData("mod_support_enabled") then
 
 	local mod_prefab_list = 
