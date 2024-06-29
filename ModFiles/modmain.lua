@@ -78,6 +78,16 @@ end
 
 local old_open = nil
 local function onopen(inst)
+	---------------------------------------
+	--尝试修复bug
+	if inst.sounds == nil then
+		inst.sounds = {
+			open  = "dontstarve/wilson/chest_open",
+			close = "dontstarve/wilson/chest_close",
+			built = "dontstarve/common/chest_craft",
+		}
+	end
+	--------------------------------------
 	stack_up(inst)
 	sort_up(inst)
 	sync_conainer(inst)
