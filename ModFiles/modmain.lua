@@ -90,19 +90,23 @@ local function onopen(inst)
 end
 
 
+if GetModConfigData("sort_chest") then
+	AddPrefabPostInit("treasurechest", function(inst)
+		if not GLOBAL.TheWorld.ismastersim then return inst end
+		local old_open = inst.components.container.onopenfn
+		inst.components.container.onopenfn = onopen
+		old_open = nil			--加上这一行冗余，保证old_open注销，防止意外发生
+	end)
+end
 
-AddPrefabPostInit("treasurechest", function(inst)
-    if not GLOBAL.TheWorld.ismastersim then return inst end
-	local old_open = inst.components.container.onopenfn
-	inst.components.container.onopenfn = onopen
-	old_open = nil			--加上这一行冗余，保证old_open注销，防止意外发生
-end)
-AddPrefabPostInit("dragonflychest", function(inst)
-    if not GLOBAL.TheWorld.ismastersim then return inst end
-	local old_open = inst.components.container.onopenfn
-	inst.components.container.onopenfn = onopen
-	old_open = nil
-end)
+if GetModConfigData("sort_dragonflychest") then
+	AddPrefabPostInit("dragonflychest", function(inst)
+		if not GLOBAL.TheWorld.ismastersim then return inst end
+		local old_open = inst.components.container.onopenfn
+		inst.components.container.onopenfn = onopen
+		old_open = nil
+	end)
+end
 
 if GetModConfigData("SIB") then
 	AddPrefabPostInit("icebox", function(inst)

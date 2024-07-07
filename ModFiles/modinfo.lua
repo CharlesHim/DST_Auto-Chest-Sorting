@@ -6,7 +6,7 @@
 name = "自动整理箱子/Automatic Chest Sorting"
 description = "关闭箱子时自动整理，支持大箱子。 \n Automatically sorts loot in chests on closing, with new tall chests supported. \n 注意：模组容器的自动整理，需要在设置里打开“模组支持”。 \n For mod containers, you should turn on \"Add Mod Support\" in mod settings."
 author = "󰀜瑶光󰀜 & buzite26 & Efrem4ik"
-version = "2.4.2"
+version = "2.5.0"
 api_version = 10
 client_only_mod = false
 dst_compatible = true
@@ -17,6 +17,26 @@ priority = 3
 server_filter_tags = {"gekko auto sort"}
 
 configuration_options = {
+    {
+        name = "sort_chest",
+        label = "整理箱子/Sort Chest",
+        hover = "关闭箱子时自动整理",
+        options = {
+            { description = "否/No", data = false },
+            { description = "是/Yes", data = true },
+        },
+        default = true,
+    },
+    {
+        name = "sort_dragonflychest",
+        label = "整理龙蝇箱子/Sort Dragonfly Chest",
+        hover = "关闭龙蝇箱子时自动整理",
+        options = {
+            { description = "否/No", data = false },
+            { description = "是/Yes", data = true },
+        },
+        default = true,
+    },
     {
         name = "sort_bookstation",
         label = "整理书架/Sort Bookcase",
@@ -35,7 +55,7 @@ configuration_options = {
             { description = "否/No", data = false },
             { description = "是/Yes", data = true },
         },
-        default = false
+        default = false,
     },
     {
         name = "SSB",
@@ -45,7 +65,7 @@ configuration_options = {
             { description = "否/No", data = false },
             { description = "是/Yes", data = true },
         },
-        default = false
+        default = false,
     },
     {
         name = "mod_support_enabled",
