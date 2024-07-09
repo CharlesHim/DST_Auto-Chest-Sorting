@@ -44,7 +44,6 @@ local TheNet = GLOBAL.TheNet
 
 local function stack_up(inst)
 	for i = 1,inst.components.container:GetNumSlots() do
-		-- local d_item = inst.components.container:RemoveItemBySlot(i)	--根据上面定义的函数修改了此处调用
 		local d_item = inst.components.container:OldRemoveItemBySlot(i)
         if d_item ~= nil then inst.components.container:GiveItem(d_item) end
     end
@@ -84,54 +83,73 @@ local function sort_fn(inst)		--新定义的函数
 	sync_conainer(inst)
 end
 
-local function onopen(inst)
+local function onopen(inst, old_open)
 	sort_fn(inst)
-	if old_open then old_open(inst) end
+	if old_open then
+		old_open(inst)
+	else
+		print("\n\n ERROR! old_open is nil!!! \n\n")
+	end
 end
 
 
 if GetModConfigData("sort_chest") then
 	AddPrefabPostInit("treasurechest", function(inst)
 		if not GLOBAL.TheWorld.ismastersim then return inst end
+
 		local old_open = inst.components.container.onopenfn
-		inst.components.container.onopenfn = onopen
-		old_open = nil			--加上这一行冗余，保证old_open注销，防止意外发生
+		inst.components.container.onopenfn = function(inst)
+			onopen(inst, old_open)
+		end
+
 	end)
 end
 
 if GetModConfigData("sort_dragonflychest") then
 	AddPrefabPostInit("dragonflychest", function(inst)
 		if not GLOBAL.TheWorld.ismastersim then return inst end
+
 		local old_open = inst.components.container.onopenfn
-		inst.components.container.onopenfn = onopen
-		old_open = nil
+		inst.components.container.onopenfn = function(inst)
+			onopen(inst, old_open)
+		end
+
 	end)
 end
 
 if GetModConfigData("SIB") then
 	AddPrefabPostInit("icebox", function(inst)
 		if not GLOBAL.TheWorld.ismastersim then return inst end
+
 		local old_open = inst.components.container.onopenfn
-		inst.components.container.onopenfn = onopen
-		old_open = nil
+		inst.components.container.onopenfn = function(inst)
+			onopen(inst, old_open)
+		end
+
 	end)
 end
 
 if GetModConfigData("SSB") then
 	AddPrefabPostInit("saltbox", function(inst)
 		if not GLOBAL.TheWorld.ismastersim then return inst end
+
 		local old_open = inst.components.container.onopenfn
-		inst.components.container.onopenfn = onopen
-		old_open = nil
+		inst.components.container.onopenfn = function(inst)
+			onopen(inst, old_open)
+		end
+
 	end)
 end
 
 if GetModConfigData("sort_bookstation") then
 	AddPrefabPostInit("bookstation", function(inst)
 		if not GLOBAL.TheWorld.ismastersim then return inst end
+
 		local old_open = inst.components.container.onopenfn
-		inst.components.container.onopenfn = onopen
-		old_open = nil
+		inst.components.container.onopenfn = function(inst)
+			onopen(inst, old_open)
+		end
+
 	end)
 end
 
@@ -167,12 +185,13 @@ if GetModConfigData("mod_support_enabled") then
 
 	for _, v in pairs(mod_prefab_list) do
 		AddPrefabPostInit(v,function(inst)
-			if not GLOBAL.TheWorld.ismastersim then 
-				return inst 
-			end
+			if not GLOBAL.TheWorld.ismastersim then return inst end
+
 			local old_open = inst.components.container.onopenfn
-			inst.components.container.onopenfn = onopen
-			old_open = nil
+			inst.components.container.onopenfn = function(inst)
+				onopen(inst, old_open)
+			end
+			
 		end)
 	end
 end
