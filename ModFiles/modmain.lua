@@ -159,22 +159,32 @@ if GetModConfigData("mod_support_enabled") then
 	{
 		"storeroom",		--储藏室
 		"cellar",			--地窖
-		"medal_livingroot_chest",	--勋章的树根宝箱
-		"bearger_chest",	--勋章的熊皮宝箱
-		"hclr_supermu1",	--懈怠科技升级版的四个箱子冰箱
+		"medal_livingroot_chest",	--勋章 树根宝箱
+		"bearger_chest",	--勋章 熊皮宝箱
+		"hclr_supermu1",	--懈怠科技 四个升级版箱子冰箱
 		"hclr_supermu2",
 		"hclr_superice1",
 		"hclr_superice2",
 		"mo_chester",
 		"mo_icebox",
-		"lg_chest",			--海洋传说的 雨花·银龙宝箱
-		"venus_icebox",		--泰拉：虚空异界的 萝卜冰箱	
+		"lg_chest",			--海洋传说 雨花·银龙宝箱
+		"venus_icebox",		--泰拉虚空异界 萝卜冰箱	
 		"sora2ice",			--小穹 寒冰箱子
 		"hiddenmoonlight",	--棱镜 月藏宝匣
 		"chest_whitewood",	--棱镜 白木展示台
 		"chest_whitewood_big",		--棱镜 白木展示柜
 		"chest_whitewood_big_inf",	--棱镜 白木展示柜·无限
 		"hiddenmoonlight_inf",		--棱镜 月藏宝匣·无限
+		"xd_wsjx",			--登仙 无双剑匣
+		"xd_dbg",			--登仙 多宝格
+		"xd_hhlmz",			--登仙 黄花梨木桌
+		"xd_crc",			--登仙 储肉仓
+		"xd_sgc",			--登仙 蔬果仓
+		"xd_lgzbh",			--登仙 流光珠宝盒
+		"xd_gjx",			--登仙 工具匣
+		"xd_mg",			--登仙 蜜罐
+		"xd_mglz",			--登仙 蘑菇篓子
+		"xd_lbx",			--登仙 灵宝箱 
 		----- 在下面添加模组容器预制件名称，注意使用英文引号与逗号 -----
 
 
